@@ -7,10 +7,12 @@ import bcrypt from "bcryptjs";
 import  userRoutes from "./routes/user";
 import homeRoutes from "./routes/home";
 import albumRoutes from "./routes/album";
+import dotenv from "dotenv";
 
 const app = express();
 app.use((cors()));
 app.use(bodyParser.json());
+dotenv.config();
 
 
 app.use("/auth",userRoutes);
@@ -47,9 +49,9 @@ app.use("/album",albumRoutes);
 
 
 try {
-    mongoose.connect("mongodb+srv://tharakaprabhath300:STfuriOsxXMja3nN@clusterphotograpghy.kysizud.mongodb.net/?retryWrites=true&w=majority&appName=ClusterPhotograpghy");
+    mongoose.connect(process.env.MONGODB_URI!);
 
-    app.listen(process.env.PORT || 8080, () => {
+    app.listen(process.env.PORT! || 8080, () => {
         console.log("connected on 8080");
     })
 
