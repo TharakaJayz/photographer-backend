@@ -12,14 +12,17 @@ const app = express();
 app.use((cors()));
 app.use(bodyParser.json());
 
-app.use("/",function (req, res, next) {
-  res.status(200).send("hello from server");
-  next();
-});
+
 
 app.use("/auth",userRoutes);
 app.use("/home",homeRoutes);
 app.use("/album",albumRoutes);
+
+
+app.use("/", function (req, res, next) {
+  res.status(200).send("hello from server");
+  next();
+});
 
 
 // app.post("/signUp", async (req,res)=>{
