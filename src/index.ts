@@ -15,7 +15,7 @@ app.use(bodyParser.json());
 app.use(function (req, res, next) {
   res.setHeader(
     "Content-Security-Policy",
-    "default-src 'self'; img-src 'self' https://lh3.googleusercontent.com/pw https://lh3.googleusercontent.com/pw/;"
+    "default-src 'self'; img-src 'self' https://lh3.googleusercontent.com/ https://lh3.googleusercontent.com/pw/ https://lh3.googleusercontent.com/pw/;"
   );
   next();
 });
