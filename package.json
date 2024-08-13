@@ -5,9 +5,12 @@
   "main": "./src/index.ts",
   "scripts": {
     "dev": "nodemon",
-    "build": "npm install && npx tsc",
+    "build": "npm install && npx tsc && cp -r src/ dist/",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node ./src/index.ts"
+  },
+  "engines": {
+    "node": "22.2.0"
   },
   "author": "",
   "license": "ISC",
