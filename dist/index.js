@@ -13,6 +13,10 @@ const album_1 = __importDefault(require("./routes/album"));
 const app = (0, express_1.default)();
 app.use(((0, cors_1.default)()));
 app.use(body_parser_1.default.json());
+app.use(function (req, res, next) {
+    res.setHeader("Content-Security-Policy", "default-src 'self'; img-src 'self' https://lh3.googleusercontent.com");
+    next();
+});
 app.use("/auth", user_1.default);
 app.use("/home", home_1.default);
 app.use("/album", album_1.default);

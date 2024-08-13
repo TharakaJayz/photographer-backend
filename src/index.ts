@@ -12,6 +12,13 @@ const app = express();
 app.use((cors()));
 app.use(bodyParser.json());
 
+app.use(function (req, res, next) {
+  res.setHeader(
+    "Content-Security-Policy",
+    "default-src 'self'; img-src 'self' https://lh3.googleusercontent.com"
+  );
+  next();
+});
 
 app.use("/auth",userRoutes);
 app.use("/home",homeRoutes);
