@@ -5,15 +5,16 @@
   "main": "./src/index.ts",
   "scripts": {
     "dev": "nodemon",
-    "build": "npm install && npx tsc && cp -r src/ dist/",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ./src/index.ts"
+    "build": "webpack --config webpack.config.js",
+    "start": "node dist/bundle.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "engines": {
     "node": "22.2.0"
   },
   "author": "",
   "type": "module",
+  "sourceType": "script",
   "license": "ISC",
   "dependencies": {
     "@types/bcryptjs": "^2.4.6",
@@ -31,5 +32,10 @@
     "nodemon": "^3.1.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.4.2"
+  },
+  "devDependencies": {
+    "ts-loader": "^9.5.1",
+    "webpack": "^5.93.0",
+    "webpack-cli": "^5.1.4"
   }
 }

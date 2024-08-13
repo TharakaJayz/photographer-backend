@@ -2,8 +2,6 @@ import express from "express";
 import cors from "cors";
 import bodyParser from "body-parser"
 import mongoose from "mongoose";
-import bcrypt from "bcryptjs";
-
 import  userRoutes from "./routes/user";
 import homeRoutes from "./routes/home";
 import albumRoutes from "./routes/album";
